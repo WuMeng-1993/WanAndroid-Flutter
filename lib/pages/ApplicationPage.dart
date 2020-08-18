@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wan_android_flutter/common/GlobalConfig.dart';
 
+/// 主页
 class ApplicationPage extends StatefulWidget {
 
   @override
@@ -21,12 +22,27 @@ class _ApplicationPage extends State<ApplicationPage> {
     _pageController = PageController(initialPage: this._page);
   }
 
-  final List<BottomNavigationBarItem> _bottomTabs = [
+  final List<BottomNavigationBarItem> _bottomTabs = <BottomNavigationBarItem>[
     BottomNavigationBarItem(
       icon: Icon(Icons.ac_unit),
       title: Text(GlobalConfig.homeTab),
       backgroundColor: GlobalConfig.colorPrimary
     ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.add),
+      title: Text(GlobalConfig.projectTab),
+      backgroundColor: GlobalConfig.colorPrimary
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.add),
+      title: Text(GlobalConfig.homeTab),
+      backgroundColor: GlobalConfig.colorPrimary
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.add),
+      title: Text(GlobalConfig.homeTab),
+      backgroundColor: GlobalConfig.colorPrimary
+    )
   ];
 
   @override
@@ -40,7 +56,11 @@ class _ApplicationPage extends State<ApplicationPage> {
         controller: _pageController,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: ,
+        items: _bottomTabs,
+        currentIndex: _page,
+        fixedColor: GlobalConfig.colorPrimary,
+        type: BottomNavigationBarType.fixed,
+        onTap: onTap,
       ),
     );
   }
@@ -55,6 +75,11 @@ class _ApplicationPage extends State<ApplicationPage> {
       this._page = page;
     });
   }
+
+  void onTap(int index) {
+
+  }
+
 
 }
 

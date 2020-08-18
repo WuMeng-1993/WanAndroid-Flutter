@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wan_android_flutter/common/GlobalConfig.dart';
+import 'package:wan_android_flutter/pages/ApplicationPage.dart';
 
 void main() {
   return runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         fontFamily:"noto",
         primaryColor: GlobalConfig.colorPrimary
       ),
-      home: ,
+      home: ApplicationPage(),
     );
   }
 
